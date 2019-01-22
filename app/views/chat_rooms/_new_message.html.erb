@@ -1,0 +1,13 @@
+<%= form_for(@message, remote: true) do |f| %>
+<div class="form-group">
+	
+	<%= f.text_field :body, class: 'form-control' %>
+	<%= f.hidden_field :chat_room_id, :value => @chat_room.id %>
+	
+</div>
+<div class="form-actions">
+	<%= f.submit nil, :class => 'button primary radius small' %>
+	<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+	chat_room_path, :class => 'btn btn-default' %>
+</div>
+<% end %>

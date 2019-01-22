@@ -1,0 +1,24 @@
+<div data-turbolinks="false">
+	<head>
+		<h1><%= @chat_room.title %></h1>
+	</head>
+
+	<div id="messages"  >
+		<% if @messages.any? %>
+		<%=  render @chat_room.messages  %>
+		<br>
+		<% end %>
+		
+	</div>
+	<div  class="message-wr">
+		<%= render 'new_message' %>
+		
+	</div>
+	<span id="mesg_title" >	<%= link_to "Home", chat_rooms_path, data: { turbolinks: false } %> </span>
+	<div id="users"  >
+		<% if @messages.any? %>
+		<%=  render @chat_room.user %>
+		<br>
+		<% end %>
+	</div>
+</div>

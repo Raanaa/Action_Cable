@@ -1,0 +1,12 @@
+<h1>Add chat room</h1>
+<%= form_for(@chat_room, remote: true) do |f| %>
+<div class="form-group">
+	<%= f.label :enter_title_name %>
+	<%= f.text_field :title, autofocus: true, class: 'form-control' %>
+</div>
+<div class="form-actions">
+	<%= f.submit nil, :class => 'button primary radius small' %>
+	<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+	chat_rooms_path, :class => 'btn btn-default' %>
+</div>
+<% end %>

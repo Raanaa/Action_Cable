@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<%= stylesheet_link_tag 'indexcss', media: 'all' %>
+	</head>
+
+</html>
+<h1>Chat rooms</h1>
+<div id="messagestitle" data-turbolinks="false"  class="messages">
+	<div  class="messages-table">
+		<% if @chat_rooms.any? %>
+		<%= render @chat_rooms %>
+		<% end %>
+	</div>
+</div>
+<div id="message-wr" class="message-wr">
+	<%= render 'new_chat_room' %>
+	
+</div>
